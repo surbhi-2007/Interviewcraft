@@ -8,7 +8,7 @@ export default function AdminDashboard() {
 
   useEffect(() => {
     setLoading(true);
-    fetch('/api/admin/overview')
+    fetch('https://interviewcraft-1-2c1q.onrender.com/api/admin/overview')
       .then(res => res.json())
       .then(overviewData => {
         setData(overviewData);

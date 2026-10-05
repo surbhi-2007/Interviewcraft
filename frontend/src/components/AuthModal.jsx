@@ -18,7 +18,7 @@ export default function AuthModal({ isOpen, onClose, onLoginSuccess }) {
     setErrorMsg('');
     setLoading(true);
 
-    const endpoint = isLogin ? '/api/auth/login' : '/api/auth/signup';
+    const endpoint = isLogin ? 'https://interviewcraft-1-2c1q.onrender.com/api/auth/login' : 'https://interviewcraft-1-2c1q.onrender.com/api/auth/signup';
     const payload = isLogin
       ? { email, password }
       : { name, email, password, targetRole };

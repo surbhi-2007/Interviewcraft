@@ -52,7 +52,7 @@ export default function App() {
 
   const handleEndSession = (history, jobTitle) => {
     const sessId = sessionData?.sessionId || 'demo';
-    fetch(`/api/interviews/${sessId}/end`, {
+    fetch(`https://interviewcraft-1-2c1q.onrender.com/api/interviews/${sessId}/end`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ 
