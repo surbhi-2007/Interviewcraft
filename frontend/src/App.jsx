@@ -98,7 +98,7 @@ export default function App() {
             </div>
             <div>
               <span className="font-extrabold text-slate-900 text-lg tracking-tight">InterviewCraft</span>
-              <span className="text-[10px] bg-indigo-50 border border-indigo-100 text-indigo-600 font-semibold px-2 py-0.5 rounded-full ml-2">Database Integrated</span>
+              <span className="hidden sm:inline-flex text-[10px] bg-indigo-50 border border-indigo-100 text-indigo-600 font-semibold px-2 py-0.5 rounded-full ml-2">Database Integrated</span>
             </div>
           </div>
 
@@ -149,7 +149,7 @@ export default function App() {
             ) : (
               <button
                 onClick={() => setIsAuthOpen(true)}
-                className="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-xs px-4 py-2 rounded-xl transition shadow-sm"
+                className="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-xs px-3 sm:px-4 py-2 rounded-xl whitespace-nowrap transition shadow-sm"
               >
                 <LogIn className="w-4 h-4" /> Sign In / Register
               </button>
