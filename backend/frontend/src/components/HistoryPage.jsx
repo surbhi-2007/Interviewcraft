@@ -14,7 +14,7 @@ export default function HistoryPage({ currentUser, onSelectSession, onNewPractic
     }
 
     setLoading(true);
-    fetch(`/api/interviews/history/${currentUser.id}`)
+    fetch(`https://interviewcraft-1-2c1q.onrender.com/api/interviews/history/${currentUser.id}`)
       .then(res => res.json())
       .then(data => {
         setSessions(data.sessions || []);

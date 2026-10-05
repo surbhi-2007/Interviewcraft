@@ -13,7 +13,7 @@ export default function ProgressPage({ currentUser }) {
     }
 
     setLoading(true);
-    fetch(`/api/interviews/progress/${currentUser.id}`)
+    fetch(`https://interviewcraft-1-2c1q.onrender.com/api/interviews/progress/${currentUser.id}`)
       .then(res => res.json())
       .then(resData => {
         setData(resData);

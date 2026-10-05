@@ -23,7 +23,7 @@ export default function InterviewRoom({ sessionData, onEndSession }) {
   useEffect(() => {
     let isMounted = true;
     setLoading(true);
-    fetch('/api/interviews/start', {
+    fetch('https://interviewcraft-1-2c1q.onrender.com/api/interviews/start', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(sessionData)
@@ -117,7 +117,7 @@ export default function InterviewRoom({ sessionData, onEndSession }) {
     setInput('');
     setLoading(true);
 
-    fetch(`/api/interviews/${sessionData.sessionId || 'demo'}/message`, {
+    fetch(`https://interviewcraft-1-2c1q.onrender.com/api/interviews/${sessionData.sessionId || 'demo'}/message`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
