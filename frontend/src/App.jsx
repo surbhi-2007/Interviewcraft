@@ -6,7 +6,7 @@ import HistoryPage from './components/HistoryPage';
 import ProgressPage from './components/ProgressPage';
 import AdminDashboard from './components/AdminDashboard';
 import AuthModal from './components/AuthModal';
-import { Sparkles, History, TrendingUp, ShieldCheck, LogIn, LogOut, Play, UserCheck } from 'lucide-react';
+import { Sparkles, History, TrendingUp, ShieldCheck, LogIn, LogOut, Play, UserCheck, Menu, X } from 'lucide-react';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('practice'); // 'practice' | 'history' | 'progress' | 'admin'
@@ -24,6 +24,7 @@ export default function App() {
   });
 
   const [isAuthOpen, setIsAuthOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const handleLoginSuccess = (user, token) => {
     setCurrentUser(user);
@@ -129,6 +130,12 @@ export default function App() {
 
           {/* User Auth Profile Area */}
           <div className="flex items-center gap-3">
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="md:hidden p-2 rounded-lg bg-slate-100 text-slate-700"
+            >
+              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </button>
             {currentUser ? (
               <div className="flex items-center gap-3 bg-slate-100 border border-slate-200 px-3.5 py-1.5 rounded-xl">
                 <div className="w-7 h-7 rounded-full bg-indigo-600 text-white flex items-center justify-center text-xs font-bold uppercase">
@@ -157,6 +164,38 @@ export default function App() {
           </div>
         </div>
       </header>
+
+      {mobileMenuOpen && (
+        <div className="md:hidden bg-white border-b border-slate-200 p-3 shadow-sm">
+          <div className="flex flex-col gap-2">
+            {[
+              { id: 'practice', label: 'Practice Room', icon: Play },
+              { id: 'history', label: 'Interview History', icon: History },
+              { id: 'progress', label: 'Progress Tracker', icon: TrendingUp },
+              { id: 'admin', label: 'Admin Portal', icon: ShieldCheck }
+            ].map(tab => {
+              const Icon = tab.icon;
+              return (
+                <button
+                  key={tab.id}
+                  onClick={() => {
+                    handleTabClick(tab.id);
+                    setMobileMenuOpen(false);
+                  }}
+                  className={`flex items-center gap-3 w-full px-4 py-3 rounded-xl text-sm font-semibold ${
+                    activeTab === tab.id
+                      ? 'bg-indigo-50 text-indigo-600'
+                      : 'text-slate-600 hover:bg-slate-50'
+                  }`}
+                >
+                  <Icon className="w-4 h-4" />
+                  {tab.label}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      )}
 
       {/* Main View Area */}
       <main className="flex-1">
