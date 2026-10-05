@@ -91,7 +91,7 @@ export default function App() {
     <div className="min-h-screen bg-slate-50 text-slate-800 font-sans flex flex-col selection:bg-indigo-500 selection:text-white">
       {/* Top Global Navigation Bar */}
       <header className="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-sm">
-        <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 py-3 flex items-center justify-between">
           <div className="flex items-center gap-3 cursor-pointer" onClick={handleRestartPractice}>
             <div className="p-2 bg-indigo-600 rounded-xl text-white shadow-md shadow-indigo-600/20">
               <Sparkles className="w-5 h-5" />

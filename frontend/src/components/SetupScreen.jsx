@@ -66,14 +66,14 @@ export default function SetupScreen({ currentUser, onStartSession, onOpenAuth })
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-800 p-6 md:p-10 font-sans flex flex-col items-center justify-center">
+    <div className="min-h-screen bg-slate-50 text-slate-800 p-4 sm:p-6 md:p-10 font-sans flex flex-col items-center justify-center">
       <div className="max-w-4xl w-full space-y-8">
         {/* Header */}
         <div className="text-center space-y-3">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-indigo-50 border border-indigo-100 rounded-full text-indigo-600 text-xs font-semibold shadow-sm">
             <Sparkles className="w-4 h-4" /> AI Interview Practice Platform
           </div>
-          <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">Prepare For Your Next Job Interview</h1>
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">Prepare For Your Next Job Interview</h1>
           <p className="text-sm md:text-base text-slate-600 max-w-xl mx-auto">
             Choose your target role, pick an interviewer personality, and practice answering out loud with instant AI evaluation.
           </p>
